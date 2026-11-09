@@ -52,31 +52,15 @@ const products = [
 		category: "pouch",
 		name: "Pouch Character Collection",
 		price: 39000,
-		image: "images/katalogpouch1.jpeg",
+		image: "images/bench_bear.jpeg",
 		description: "Pouch praktis dengan pilihan ilustrasi karakter yang ditampilkan pada foto koleksi.",
 		variants: [
-			{ name: "Bench Bear" },
-			{ name: "Miao Cat" },
-			{ name: "Hug Bear" },
-			{ name: "Tired Study" },
-			{ name: "Love Couple" },
-			{ name: "Panda Friend" }
-		]
-	},
-	{
-		id: "pouch-daily",
-		category: "pouch",
-		name: "Pouch Daily Collection",
-		price: 39000,
-		image: "images/katalogpouch.jpeg",
-		description: "Pilihan pouch karakter untuk menyimpan perlengkapan kecil saat bepergian.",
-		variants: [
-			{ name: "Bench Bear" },
-			{ name: "Miao Cat" },
-			{ name: "Hug Bear" },
-			{ name: "Tired Study" },
-			{ name: "Love Couple" },
-			{ name: "Panda Friend" }
+			{ name: "Bench Bear", image: "images/bench_bear.jpeg" },
+			{ name: "Miao Cat", image: "images/miao_cat.jpeg" },
+			{ name: "Panda Friend", image: "images/panda_friend.jpeg" },
+			{ name: "Love Couple", image: "images/love_couple.jpeg" },
+			{ name: "Tired Study", image: "images/tired_study.jpeg" },
+			{ name: "Hug Bear", image: "images/hug_bear.jpeg" }
 		]
 	},
 	{
@@ -96,7 +80,7 @@ const products = [
 		category: "bundle-bag",
 		name: "Tote Bag + Pouch Set",
 		price: 119000,
-		image: "images/bundlingbags.jpeg",
+		image: "images/bundlingbag.jpeg",
 		description: "Satu tote bag dan satu pouch dalam satu set serasi, sesuai foto katalog bundling.",
 		variants: [{ name: "Set Tote Bag + Pouch" }]
 	},
@@ -105,7 +89,7 @@ const products = [
 		category: "bundle-hijab-bag",
 		name: "Hijab + Bag Set",
 		price: 159000,
-		image: "images/bundlinghijab.jpeg",
+		image: "images/hijabbundling.jpeg",
 		description: "Set berisi tote bag, pouch, dan hijab segi empat. Foto menampilkan contoh warna hijab.",
 		variants: hijabColors.map((color) => ({ ...color }))
 	}
@@ -181,7 +165,7 @@ function renderProductCard(product) {
 					${product.description ? `<p class="product-description">${product.description}</p>` : ""}
 					${product.category !== "tote" ? `
 						<span class="variant-label">${product.category === "bundle-hijab-bag" ? "Pilih warna" : "Pilih motif"}</span>
-						${renderVariantOptions(product, true)}
+						${renderVariantOptions(product, product.id !== "pouch-character")}
 					` : ""}
 				`}
 				<div class="product-actions">
