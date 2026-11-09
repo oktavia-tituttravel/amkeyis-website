@@ -261,10 +261,19 @@ footer p {
     .hero {
         flex-direction: column;
         padding: 45px 6%;
+        height: auto;
+        background-position: center;
+    }
+
+    .hero-content {
+        width: 100% !important;
+        max-width: 500px;
+        margin: 0 !important;
+        transform: none;
     }
 
     .hero h1 {
-        font-size: 48px;
+        font-size: clamp(38px, 12vw, 48px);
     }
 
     .hero-image {
