@@ -264,9 +264,7 @@ footer p {
     }
 
     .hero h1 {
-        font-size: 36px;
-        line-height: 1.1;
-        overlow-wrap: break-word;
+        font-size: 48px;
     }
 
     .hero-image {
@@ -440,14 +438,6 @@ footer p {
     line-height: 1.6;
 }
 
-.preorder-note {
-    margin-top: 10px;
-    color: #9a6e52;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 0.04em;
-}
-
 .variant-label {
     display: block;
     margin: 16px 0 9px;
@@ -460,15 +450,6 @@ footer p {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-}
-
-.product-card--hijab > .variant-label {
-    padding: 0 18px;
-}
-
-.product-card--hijab > .variant-list {
-    margin-bottom: 18px;
-    padding: 0 18px;
 }
 
 .variant-option {
@@ -484,12 +465,6 @@ footer p {
 .variant-option[aria-pressed="true"] {
     border-color: #ae8865;
     color: #79543d;
-}
-
-.product-card--hijab .variant-option {
-    min-height: 36px;
-    border-width: 2px;
-    padding: 6px 9px;
 }
 
 .variant-swatch {
