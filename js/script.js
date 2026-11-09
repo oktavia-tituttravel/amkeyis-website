@@ -30,6 +30,24 @@ const products = [
 		variants: [{ name: "Capybara Holiday", image: "images/capybara orange.jpeg" }]
 	},
 	{
+		id: "tote-holiday-collection",
+		category: "tote",
+		name: "Capybara Holiday Collection Tote",
+		price: 89000,
+		image: "images/holiday.jpeg",
+		description: "Tote bag kanvas dengan ilustrasi Capybara untuk menemani aktivitas harian.",
+		variants: [{ name: "Capybara Holiday Collection" }]
+	},
+	{
+		id: "tote-capybara-shower",
+		category: "tote",
+		name: "Capybara Shower Tote",
+		price: 89000,
+		image: "images/capybara shower.jpeg",
+		description: "Tote bag kanvas dengan ilustrasi Capybara yang ceria untuk menemani aktivitas harian.",
+		variants: [{ name: "Capybara Shower" }]
+	},
+	{
 		id: "pouch-character",
 		category: "pouch",
 		name: "Pouch Character Collection",
