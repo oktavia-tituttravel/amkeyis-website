@@ -91,7 +91,9 @@ const products = [
 		price: 159000,
 		image: "images/hijabbundling.jpeg",
 		description: "Set berisi tote bag, pouch, dan hijab segi empat. Foto menampilkan contoh warna hijab.",
-		variants: hijabColors.map((color) => ({ ...color }))
+		variants: Array.from({ length: 10 }, (_, index) => ({
+			name: `Katalog ${index + 1}`
+		}))
 	}
 ];
 
@@ -164,8 +166,8 @@ function renderProductCard(product) {
 					<p class="product-price">${formatPrice(product.price)}</p>
 					${product.description ? `<p class="product-description">${product.description}</p>` : ""}
 					${product.category !== "tote" ? `
-						<span class="variant-label">${product.category === "bundle-hijab-bag" ? "Pilih warna" : "Pilih motif"}</span>
-						${renderVariantOptions(product, product.id !== "pouch-character")}
+						<span class="variant-label">${product.id === "bundle-hijab-bag-set" ? "Pilih Warna (Sesuai PO Katalog Hijab)" : product.category === "bundle-hijab-bag" ? "Pilih warna" : "Pilih motif"}</span>
+						${renderVariantOptions(product, product.id !== "pouch-character" && product.id !== "bundle-hijab-bag-set")}
 					` : ""}
 				`}
 				<div class="product-actions">
