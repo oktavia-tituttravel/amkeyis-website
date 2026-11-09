@@ -66,7 +66,7 @@ const products = [
 		category: "hijab",
 		name: "Hijab Paris Premium (PO)",
 		price: 20000,
-		image: "images/katalog_1.jpeg",
+		image: "images/kataloghijab.jpeg",
 		description: "PRE-ORDER • 7–10 HARI",
 		variants: Array.from({ length: 10 }, (_, index) => ({
 			name: `Katalog ${index + 1}`,
@@ -144,21 +144,29 @@ function renderVariantOptions(product, compact = false) {
 
 function renderProductCard(product) {
 	const variant = getSelectedVariant(product);
+	const isHijab = product.category === "hijab";
 	return `
-		<article class="product-card">
+		<article class="product-card${isHijab ? " product-card--hijab" : ""}">
 			<div class="product-card-image">
 				<img src="${getProductImage(product, variant)}" alt="${product.name}" loading="lazy">
 			</div>
 			<div class="product-card-content">
-				<h3>${product.name}</h3>
-				<p class="product-price">${formatPrice(product.price)}</p>
-				<p class="product-description">${product.description}</p>
-				${product.category !== "tote" ? `
-					<span class="variant-label">${product.category === "hijab" || product.category === "bundle-hijab-bag" ? "Pilih warna" : "Pilih motif"}</span>
-					${renderVariantOptions(product, true)}
-				` : ""}
+				${isHijab ? `
+					<span class="variant-label">Pilih warna</span>
+					${renderVariantOptions(product)}
+					<h3>${product.name}</h3>
+					<p class="product-price">${formatPrice(product.price)}</p>
+					<p class="product-description product-description--preorder">${product.description}</p>
+				` : `
+					<h3>${product.name}</h3>
+					<p class="product-price">${formatPrice(product.price)}</p>
+					${product.description ? `<p class="product-description">${product.description}</p>` : ""}
+					${product.category !== "tote" ? `
+						<span class="variant-label">${product.category === "bundle-hijab-bag" ? "Pilih warna" : "Pilih motif"}</span>
+						${renderVariantOptions(product, true)}
+					` : ""}
+				`}
 				<div class="product-actions">
-					<button class="product-action secondary" type="button" data-action="detail" data-product-id="${product.id}">Detail Produk</button>
 					<a class="product-action" href="${createWhatsAppUrl(product, variant)}" target="_blank" rel="noopener noreferrer">Pesan via WhatsApp</a>
 				</div>
 			</div>
@@ -172,46 +180,17 @@ function renderCatalog() {
 		<div class="catalog-heading">
 			<p class="subtitle">AMKEYIS COLLECTION</p>
 			<h2>${getCategoryName(currentCategory)}</h2>
-			<p>Pilih koleksi favoritmu dan temukan detail produk yang paling cocok.</p>
+			<p>Pilih koleksi favoritmu dan pesan langsung produk pilihanmu.</p>
 		</div>
 		<div class="catalog-tabs" role="group" aria-label="Kategori produk">
 			${categories.map((category) => `
 				<button class="catalog-tab" type="button" data-action="category" data-category="${category.id}" aria-pressed="${currentCategory === category.id}">${category.name}</button>
 			`).join("")}
 		</div>
-		<div class="product-grid${currentCategory === "tote" ? " product-grid--tote" : ""}">
+		<div class="product-grid${currentCategory === "tote" ? " product-grid--tote" : ""}${currentCategory === "hijab" ? " product-grid--hijab" : ""}">
 			${products.filter((product) => product.category === currentCategory).map(renderProductCard).join("")}
 		</div>
 		<p class="price-note">Harga katalog merupakan harga awal dan dapat dikonfirmasi kembali saat pemesanan.</p>
-	`;
-}
-
-function renderProductDetail(product) {
-	const variant = getSelectedVariant(product);
-	catalog.hidden = false;
-	catalog.innerHTML = `
-		<div class="product-detail">
-			<button class="back-to-catalog" type="button" data-action="back">← Kembali ke katalog</button>
-			<div class="detail-layout">
-				<div class="detail-image">
-					<img src="${getProductImage(product, variant)}" alt="${product.name}" fetchpriority="high">
-				</div>
-				<div class="detail-copy">
-					<p class="subtitle">${getCategoryName(product.category)}</p>
-					<h2>${product.name}</h2>
-					<p class="product-price">${formatPrice(product.price)}</p>
-					<p>${product.description}</p>
-					${product.category !== "tote" ? `
-						<span class="variant-label">${product.category === "hijab" || product.category === "bundle-hijab-bag" ? "Warna pilihan" : "Motif pilihan"}</span>
-						${renderVariantOptions(product)}
-					` : ""}
-					<div class="product-actions">
-						<a class="product-action" href="${createWhatsAppUrl(product, variant)}" target="_blank" rel="noopener noreferrer">Pesan via WhatsApp</a>
-					</div>
-					<p class="price-note">Harga katalog merupakan harga awal dan dapat dikonfirmasi kembali saat pemesanan.</p>
-				</div>
-			</div>
-		</div>
 	`;
 }
 
@@ -245,24 +224,7 @@ catalog.addEventListener("click", (event) => {
 	}
 
 	if (action === "variant") {
-		const isDetailView = Boolean(catalog.querySelector(".product-detail"));
 		selectedVariants.set(productId, Number(variantIndex));
-		const product = products.find((item) => item.id === productId);
-		if (product) {
-			if (isDetailView) {
-				renderProductDetail(product);
-			} else {
-				renderCatalog();
-			}
-		} else {
-			renderCatalog();
-		}
+		renderCatalog();
 	}
-
-	if (action === "detail") {
-		const product = products.find((item) => item.id === productId);
-		if (product) renderProductDetail(product);
-	}
-
-	if (action === "back") renderCatalog();
 });
