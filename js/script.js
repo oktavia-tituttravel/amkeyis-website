@@ -124,8 +124,9 @@ function getProductImage(product, variant) {
 }
 
 function createWhatsAppUrl(product, variant) {
+	const nomorWA = "6289666370064";
 	const message = `Halo AMKEYIS, saya ingin memesan ${product.name} dengan pilihan ${variant.name}.`;
-	return `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
+	return `https://wa.me/${nomorWA}?text=${encodeURIComponent(message)}`;
 }
 
 function renderVariantOptions(product, compact = false) {
