@@ -124,22 +124,24 @@ function getProductImage(product, variant) {
 }
 
 function createWhatsAppUrl(product, variant) {
-	const nomorWA = "6289666370064";
+    const nomorWA = "6289666370064";
+
     const message = [
-        "Hii MIMIN MANIZ!",
+        "Hii MIMIN MANIZ! 🥰💕",
         "",
-        "Aku mau order nih!",
+        "Aku mau order nih! 🛍️",
         "",
-        `Produk: ${product.name}`,
-        `Pilihan: ${variant.name}`,
+        `🎀 Produk: ${product.name}`,
+        `🌷 Pilihan: ${variant.name}`,
         "",
-        "Apakah produknya masih tersedia?",
+        "Apakah produknya masih tersedia, Mimin? 🥺",
         "",
-        "Plizz bales Mimin maniz!",
+        "Aku tunggu balasannya yaa! 💗",
         "",
-        "Thank you, AMKEYIS!"
+        "Thank you, AMKEYIS! ♡"
     ].join("\n");
-	return `https://wa.me/${nomorWA}?text=${encodeURIComponent(message)}`;
+
+    return `https://wa.me/${nomorWA}?text=${encodeURIComponent(message)}`;
 }
 
 function renderVariantOptions(product, compact = false) {
