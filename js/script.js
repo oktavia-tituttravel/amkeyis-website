@@ -126,27 +126,19 @@ function getProductImage(product, variant) {
 function createWhatsAppUrl(product, variant) {
     const nomorWA = "6289666370064";
 
-    const emoji = (code) => String.fromCodePoint(code);
+    const message = `Hii MIMIN MANIZ! 💗🎀
 
-    const message = [
-        "Hii MIMIN MANIZ! " + emoji(0x1F970) + emoji(0x1F497),
-        "",
-        "Aku mau order nih! " + emoji(0x1F6CD),
-        "",
-        emoji(0x1F380) + " Produk: " + product.name,
-        emoji(0x1F338) + " Pilihan: " + variant.name,
-        "",
-        "Apakah produknya masih tersedia, Mimin? " + emoji(0x1F97A),
-        "",
-        "Aku tunggu balasannya yaa! " + emoji(0x1F496),
-        "",
-        "Thank you, AMKEYIS! " + emoji(0x2661)
-    ].join("\n");
+Aku mau order nih!
 
-    return "https://wa.me/" + nomorWA +
-        "?text=" + encodeURIComponent(message);
-}
+🛍️ Produk: ${product.name}
+🌷 Pilihan: ${variant.name}
 
+
+Plizz bales Mimin manizz! 🥹💕
+
+Thank you, AMKEYIS! ♡`;
+
+    return `https://wa.me/${nomorWA}?text=${encodeURIComponent(message)}`;
 
 function renderVariantOptions(product, compact = false) {
 	const variants = compact ? product.variants.slice(0, 3) : product.variants;
