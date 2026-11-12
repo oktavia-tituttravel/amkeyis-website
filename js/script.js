@@ -125,17 +125,18 @@ function getProductImage(product, variant) {
 
 function createWhatsAppUrl(product, variant) {
 	const nomorWA = "6289666370064";
-    const message = `Hii MIMIN MANIZ!👀🫶🏽
+    const message = `Hii AMKEYIS! \u{1F380}\u{1F497}
 
-    Aku mau order nih!
+       Aku mau order nih!
 
-    🛍️ Produk: ${product.name}
-   🌷 Pilihan: ${variant.name}
+   \u{1F6CD}\u{FE0F} Produk: ${product.name}
+   \u{1F338} Pilihan: ${variant.name}
 
+   Apakah produknya masih tersedia?
 
-    Plizz bales Mimin manizz! 🥹💕
+  Aku mau order yaa! \u{1F979}\u{1F495}
 
-    Thank you, AMKEYIS! ♡`; 
+   Thank you, AMKEYIS! ♡`;
 	return `https://wa.me/${nomorWA}?text=${encodeURIComponent(message)}`;
 }
 
