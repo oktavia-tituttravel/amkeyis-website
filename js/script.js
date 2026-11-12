@@ -125,8 +125,7 @@ function getProductImage(product, variant) {
 
 function createWhatsAppUrl(product, variant) {
 	const nomorWA = "6289666370064";
-    const message = `Hii MIMIN MANIZ!
-	\u{1F380}\u{1F497} 
+    const message = `Hii MIMIN MANIZ!👀🫶🏽
 
     Aku mau order nih!
 
