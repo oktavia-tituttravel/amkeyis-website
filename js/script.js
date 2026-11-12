@@ -128,17 +128,18 @@ function createWhatsAppUrl(product, variant) {
 
     const message = `Hii MIMIN MANIZ! 💗🎀
 
-Aku mau order nih!
+    Aku mau order nih!
 
-🛍️ Produk: ${product.name}
-🌷 Pilihan: ${variant.name}
+  🛍️ Produk: ${product.name}
+   🌷 Pilihan: ${variant.name}
 
 
-Plizz bales Mimin manizz! 🥹💕
+  Plizz bales Mimin manizz! 🥹💕
 
-Thank you, AMKEYIS! ♡`;
+  Thank you, AMKEYIS! ♡`;
 
     return `https://wa.me/${nomorWA}?text=${encodeURIComponent(message)}`;
+}
 
 function renderVariantOptions(product, compact = false) {
 	const variants = compact ? product.variants.slice(0, 3) : product.variants;
