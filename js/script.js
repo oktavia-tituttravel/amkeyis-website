@@ -90,7 +90,6 @@ const products = [
 		name: "Hijab + Bag Set",
 		price: 25000,
 		image: "images/hijabbundling.jpeg",
-		description: "PRE-ORDER • 7–10 HARI",
 		description: "Paket bundling berisi tote bag, pouch, dan hijab paris premium. *Untuk  warna pilih di katalog hijab yaa  contoh: katalog 4 pink baby.",
 		variants: Array.from({ length: 10 }, (_, index) => ({
 			name: `Katalog ${index + 1}`
