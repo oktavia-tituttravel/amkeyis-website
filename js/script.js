@@ -33,7 +33,7 @@ const products = [
 		id: "tote-holiday-collection",
 		category: "tote",
 		name: "Capybara Holiday Collection Tote",
-		price: 89000,
+		price: 10000,
 		image: "images/holiday.jpeg",
 		description: "Tote bag kanvas dengan ilustrasi Capybara untuk menemani aktivitas harian.",
 		variants: [{ name: "Capybara Holiday Collection" }]
@@ -42,7 +42,7 @@ const products = [
 		id: "tote-capybara-shower",
 		category: "tote",
 		name: "Capybara Shower Tote",
-		price: 89000,
+		price: 10000,
 		image: "images/capybara shower.jpeg",
 		description: "Tote bag kanvas dengan ilustrasi Capybara yang ceria untuk menemani aktivitas harian.",
 		variants: [{ name: "Capybara Shower" }]
@@ -51,7 +51,7 @@ const products = [
 		id: "pouch-character",
 		category: "pouch",
 		name: "Pouch Character Collection",
-		price: 39000,
+		price: 10000,
 		image: "images/bench_bear.jpeg",
 		description: "Pouch praktis dengan pilihan ilustrasi karakter yang ditampilkan pada foto koleksi.",
 		variants: [
@@ -79,7 +79,7 @@ const products = [
 		id: "bundle-bag-set",
 		category: "bundle-bag",
 		name: "Tote Bag + Pouch Set",
-		price: 119000,
+		price: 15000,
 		image: "images/bundlingbag.jpeg",
 		description: "Satu tote bag dan satu pouch dalam satu set serasi, sesuai foto katalog bundling.",
 		variants: [{ name: "Set Tote Bag + Pouch" }]
@@ -88,9 +88,9 @@ const products = [
 		id: "bundle-hijab-bag-set",
 		category: "bundle-hijab-bag",
 		name: "Hijab + Bag Set",
-		price: 159000,
+		price: 25000,
 		image: "images/hijabbundling.jpeg",
-		description: "Set berisi tote bag, pouch, dan hijab segi empat. Foto menampilkan contoh warna hijab.",
+		description: "Set berisi tote bag, pouch, dan hijab paris premium. *Untuk  warna pilih di katalog hijab yaa  contoh: katalog 1 black.",
 		variants: Array.from({ length: 10 }, (_, index) => ({
 			name: `Katalog ${index + 1}`
 		}))
@@ -126,17 +126,14 @@ function getProductImage(product, variant) {
 function createWhatsAppUrl(product, variant) {
     const nomorWA = "6289666370064";
 
-    const message = `Hii MIMIN MANIZ! 
+     const message = `Hii MIMIN MANIZ! 
 
-    Aku mau order nih!
+ Aku mau order Min!
 
-   Produk: ${product.name}
-    Pilihan: ${variant.name}
+ Produk: ${product.name}
+ Pilihan: ${variant.name}
 
-
-  Plizz bales Mimin manizz! 
-
-  Thank you, AMKEYIS! ♡`;
+ Plizz bales Mimin manizz! ♡`;
 
     return `https://wa.me/${nomorWA}?text=${encodeURIComponent(message)}`;
 }
