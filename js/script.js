@@ -24,7 +24,7 @@ const products = [
 		id: "tote-holiday",
 		category: "tote",
 		name: "Capybara Holiday Tote",
-		price: 89000,
+		price: 10000,
 		image: "images/Holiday Capybara.jpeg",
 		description: "Tote bag kanvas dengan ilustrasi Capybara yang ceria untuk menemani aktivitas harian.",
 		variants: [{ name: "Capybara Holiday", image: "images/capybara orange.jpeg" }]
@@ -90,7 +90,7 @@ const products = [
 		name: "Hijab + Bag Set",
 		price: 25000,
 		image: "images/hijabbundling.jpeg",
-		description: "Set berisi tote bag, pouch, dan hijab paris premium. *Untuk  warna pilih di katalog hijab yaa  contoh: katalog 1 black.",
+		description: "Set berisi tote bag, pouch, dan hijab paris premium. *Untuk  warna pilih di katalog hijab yaa  contoh: katalog 4 pink baby.",
 		variants: Array.from({ length: 10 }, (_, index) => ({
 			name: `Katalog ${index + 1}`
 		}))
